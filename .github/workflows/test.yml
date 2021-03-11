@@ -6,15 +6,14 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Running tests
       - uses: actions/checkout@v1
-      - run: |
+        name: Running tests
+        run: |
           sudo apt-get update
           sudo apt-get install nodejs npm -y
           npm install
           CI=true npm test
 
       - name: Executing Next Step
-      - uses: actions/checkout@v1
-      - run: echo "Tests are successful"
+        run: echo "Tests are successful"
         
